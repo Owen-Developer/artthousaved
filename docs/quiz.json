@@ -1,0 +1,160 @@
+[
+    [
+        {
+            "question": "What do you believe is the primary reason a person is accepted by God?",
+            "choices": [
+                "God sees that they sincerely try to be a good person.",
+                "God rewards people who obey His commands well enough.",
+                "God saves people by His grace through faith in Jesus Christ.",
+                "God accepts people because they belong to a Christian family or church.",
+                "I'm not sure."
+            ]
+        },
+        {
+            "question": "If someone asked why you expect to spend eternity with God, which answer is closest to yours?",
+            "choices": [
+                "Because I've lived a mostly good life.",
+                "Because I try harder than most people to follow God.",
+                "Because Jesus died for my sins and I trust Him as my Savior.",
+                "Because I was baptized, confirmed, or raised in church.",
+                "Because I have had powerful spiritual experiences.",
+                "I'm not sure."
+            ]
+        },
+        {
+            "question": "When you think about your sins, which statement best describes you?",
+            "choices": [
+                "I don't believe my sins are a serious problem.",
+                "I know I sin, but I think my good deeds outweigh the bad.",
+                "I know I am a sinner and need God's forgiveness through Christ.",
+                "I often feel guilty but don't know how to find peace.",
+                "I'm unsure what I believe about sin."
+            ]
+        },
+        {
+            "question": "How confident are you that Jesus is the only Savior who can reconcile people to God?",
+            "choices": [
+                "Completely confident.",
+                "Mostly confident.",
+                "Unsure.",
+                "I think there are many equally valid ways to God.",
+                "I don't know."
+            ]
+        },
+        {
+            "question": "In your day-to-day life, what are you most trusting in for your standing before God?",
+            "choices": [
+                "My good behavior.",
+                "My religious activities.",
+                "My church involvement.",
+                "Jesus Christ and His finished work.",
+                "A mixture of Jesus and my own efforts.",
+                "I'm not sure."
+            ]
+        }
+    ],
+
+    [
+        {
+            "question": "How would you describe your desire to follow Jesus?",
+            "choices": [
+                "Strong and consistent.",
+                "Generally present, though imperfect.",
+                "Weak but still present.",
+                "Rarely present.",
+                "Not present at all.",
+                "I'm unsure."
+            ]
+        },
+        {
+            "question": "When you become aware of sin in your life, what is your usual response?",
+            "choices": [
+                "I ignore it.",
+                "I justify it.",
+                "I feel conviction and seek God's forgiveness.",
+                "I feel conviction but rarely respond.",
+                "I don't think much about sin.",
+                "It varies greatly."
+            ]
+        },
+        {
+            "question": "How often do you intentionally spend time praying or communicating with God?",
+            "choices": [
+                "Daily.",
+                "Several times per week.",
+                "About once per week.",
+                "Occasionally.",
+                "Rarely.",
+                "Never."
+            ]
+        },
+        {
+            "question": "Which statement best describes your relationship with the Bible?",
+            "choices": [
+                "I regularly read it and want to understand it.",
+                "I read it sometimes.",
+                "I know I should read it more.",
+                "I rarely read it.",
+                "I never read it.",
+                "I'm still exploring Christianity."
+            ]
+        },
+        {
+            "question": "Over the last few years, how would you describe the overall direction of your spiritual life?",
+            "choices": [
+                "Growing significantly.",
+                "Growing slowly.",
+                "Mostly stagnant.",
+                "Declining.",
+                "Very inconsistent.",
+                "I'm not sure."
+            ]
+        },
+        {
+            "question": "Which of these do you see most clearly in your life?",
+            "choices": [
+                "Increasing love for God.",
+                "Increasing love for other people.",
+                "Greater humility and repentance.",
+                "Greater obedience to Christ.",
+                "Some evidence of several of these.",
+                "Very little evidence of any of these."
+            ]
+        }
+    ],
+
+    [
+        {
+            "question": "How assured are you of your salvation",
+            "choices": [
+                "Completely assured",
+                "Mostly assured",
+                "Somewhat assured",
+                "Unsure",
+                "Mostly doubtful",
+                "Certain I'm not saved"
+            ]
+        },
+        {
+            "question": "How often do you question whether you are truly saved?",
+            "choices": [
+                "Never.",
+                "Rarely.",
+                "Sometimes.",
+                "Frequently.",
+                "Almost constantly."
+            ]
+        },
+        {
+            "question": "What is the biggest reason for your confidence or doubt?",
+            "choices": [
+                "Confidence in Christ's promises.",
+                "Past spiritual experiences.",
+                "Fear that my faith is not genuine.",
+                "Ongoing struggles with sin.",
+                "Uncertainty about what salvation means.",
+                "Other."
+            ]
+        }
+    ]
+]
