@@ -547,13 +547,14 @@ document.getElementById("chatInputArea").addEventListener("keydown", (e) => {
 		}
 	}
 });
-document.getElementById("chatInputArea").addEventListener("focus", (e) => {
-	if(isMobile || isIPad || true){
-		window.scrollBy({
-			top: -300,
-			left: 0,
-			behavior: "smooth"
-		});
+document.getElementById("chatInputArea").addEventListener("focus", (el) => {
+	if(isMobile || isIPad){
+		setTimeout(function () {
+			el.scrollIntoView({
+				block: "center",
+				behavior: "smooth"
+			});
+		}, 50);
 	}
 });
 document.querySelectorAll(".ques-wrapper").forEach(wrapper => {
