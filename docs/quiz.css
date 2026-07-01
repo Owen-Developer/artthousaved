@@ -1292,9 +1292,11 @@ i.init-box-icon {
     }
 }
 
+/*
 .dom-wrapper, .tra-wrapper, .evi-wrapper, .conv-human, .ques-title, .ques-wrapper {
     filter: blur(3px);
 }
 .ques-title {
     filter: blur(4px);
 }
+*/
