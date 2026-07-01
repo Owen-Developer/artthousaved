@@ -28,7 +28,7 @@ db.query('SELECT 1', (err, results) => {
 });
 
 const allowedOrigins = [
-	'https://owen-developer.github.io',
+	'https://artthousaved.com',
 ];
 app.use(cors({
 	origin: function (origin, callback) {
