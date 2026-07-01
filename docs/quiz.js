@@ -173,13 +173,13 @@ async function getAiData(){
 			{
 				"name": "Feelings-Based Assurance",
 				"heading": "Feelings-Based Assurance",
-				"description": "Measuring your salvation by your feelings, emotions and prayer consistency rather than by faith in Christ. As joy rises and falls, assurance rises and falls.",
+				"description": "Measuring your salvation by your feelings, emotional highs and prayer consistency rather than by faith in Jesus Christ. As joy rises and falls, assurance rises and falls.",
 				"score": 0
 			},
 			{
 				"name": "Comparison Trap",
 				"heading": "The Comparison Trap",
-				"description": "Comparing oneself to seemingly more mature Christians. Others' gifts, zeal, experiences, or holiness become the standard for evaluating one's salvation.",
+				"description": "Comparing yourself to seemingly more mature Christians. Others' gifts, zeal, experiences, or holiness become the standard for evaluating your own salvation.",
 				"score": 0
 			},
 			{
@@ -711,6 +711,7 @@ async function saveData(questionData, testimony, aiObject){
 }
 
 if(params.get("report")){
+	document.querySelector(".quiz-container").style.opacity = "0";
 	switchContainers(document.querySelector(".ques-container"), document.querySelector(".rep-container"));
 	switchContainers(document.querySelector(".init-content"), document.querySelector(".conv-container"));
 	currentSectionIdx = 4;
@@ -742,6 +743,7 @@ if(params.get("report")){
 			document.querySelector(".chat-input-background").classList.remove("chat-input-start");
 			document.querySelector(".chat-input-btn").onclick = sendMessage;
 			isStorySent = true;
+			document.querySelector(".quiz-container").style.opacity = "1";
 		} catch (error) {
 			console.error('Error posting data:', error);
 		}
