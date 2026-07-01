@@ -25,6 +25,7 @@ async function loadQuestions() {
 
 		questionData = data;
 		currentSectionArray = data[cheat];
+		showQuestion();
 	} catch (error) {
         console.error(error);
     }
@@ -97,7 +98,6 @@ async function showQuestion(){
 	await sleep(50);
 	document.querySelector(".ques-container").style.opacity = "1";
 }
-showQuestion();
 
 async function sendStory(){if(!isResponding){
 	if(currentMsgRate < 50){
