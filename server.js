@@ -11,7 +11,6 @@ const OpenAI = require('openai');
 const openaiClient = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
 });
-const cors = require('cors');
 
 const db = mysql.createPool({
     host: process.env.DB_HOST,
