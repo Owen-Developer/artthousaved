@@ -20,7 +20,7 @@ if(!localStorage.getItem("msgRate")){
 
 async function loadQuestions() {
     try {
-        const response = await fetch("/quiz.json");
+        const response = await fetch("/artthousaved/quiz.json");
         const data = await response.json();
 
 		questionData = data;
