@@ -11,6 +11,7 @@ const OpenAI = require('openai');
 const openaiClient = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
 });
+const cors = require('cors');
 
 const db = mysql.createPool({
     host: process.env.DB_HOST,
@@ -26,6 +27,22 @@ db.query('SELECT 1', (err, results) => {
     if (err) console.error('Error running query:', err);
     else console.log('Database is working');
 });
+
+const allowedOrigins = [
+	'https://owen-developer.github.io',
+];
+app.use(cors({
+	origin: function (origin, callback) {
+		if (!origin) return callback(null, true);
+
+		if (allowedOrigins.includes(origin)) {
+			callback(null, true);
+		} else {
+			callback(new Error('CORS not allowed from this origin'));
+		}
+	},
+	credentials: true
+}));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
