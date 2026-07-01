@@ -14,6 +14,9 @@ let assurancePercentage = 0;
 let isStorySent = false;
 let isResponding = false;
 
+const isMobile = /Mobi|Android/i.test(navigator.userAgent);
+const isIPad = /iPad/i.test(navigator.userAgent);
+
 let currentMsgRate;
 if(!localStorage.getItem("msgRate")){
 	currentMsgRate = 0;
@@ -33,7 +36,7 @@ async function loadQuestions() {
         console.error(error);
     }
 }
-loadQuestions();
+//loadQuestions();
 function sleep(ms){
   return new Promise(resolve => setTimeout(resolve, ms));
 }
@@ -533,7 +536,7 @@ document.getElementById("chatInputArea").addEventListener("input", () => {
 });
 */
 document.getElementById("chatInputArea").addEventListener("keydown", (e) => {
-	if(e.key == "Enter" && !e.shiftKey){
+	if(e.key == "Enter" && !e.shiftKey && (!isMobile && !isIPad)){
 		e.preventDefault();
 		if(document.getElementById("chatInputArea").value != ""){
 			if(isStorySent){
@@ -542,6 +545,15 @@ document.getElementById("chatInputArea").addEventListener("keydown", (e) => {
 				sendStory();
 			}
 		}
+	}
+});
+document.getElementById("chatInputArea").addEventListener("focus", (e) => {
+	if(isMobile || isIPad || true){
+		window.scrollBy({
+			top: -300,
+			left: 0,
+			behavior: "smooth"
+		});
 	}
 });
 document.querySelectorAll(".ques-wrapper").forEach(wrapper => {
