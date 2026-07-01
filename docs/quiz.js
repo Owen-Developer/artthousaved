@@ -2,6 +2,9 @@
 
 let params = new URLSearchParams(window.location.search);
 let url = "https://artthousaved.onrender.com";
+if(window.location.href.includes("localhost")){
+	url = "";
+}
 let questionData;
 let cheat = 0;
 let currentSectionIdx = cheat;
@@ -72,6 +75,11 @@ function previousQuestion(){
 async function showQuestion(){
 	highlightPanelCircles();
 	document.querySelector(".ques-container").style.opacity = "0";
+	document.querySelectorAll(".ques-wrapper").forEach(other => {
+		setTimeout(() => {
+			other.classList.remove("ques-wrapper-active");
+		}, 150);
+	});
 	await sleep(300);
 	let currentQuestion = currentSectionArray[currentQuestionIdx];
 	document.querySelector(".ques-title").textContent = currentQuestion.question;
@@ -87,7 +95,6 @@ async function showQuestion(){
 		}
 	});
 	document.querySelectorAll(".ques-wrapper").forEach((wrapper, idx) => {
-		wrapper.classList.remove("ques-wrapper-active");
 		if(idx < currentQuestion.choices.length){
 			wrapper.style.display = "flex";
 		} else {
@@ -275,10 +282,10 @@ async function getAiData(){
 
 		Return ONLY valid JSON in this format: ${JSON.stringify(analyticsData)}
 		- for "assurance_traps" give each score out of 100 based on the user's answers/testimony (try to keep one trap dominant)
-		- for "evidences_of_salvation" give each a quote from the user's testimony, and a label as for why the quote gives evidence e.g. "Spiritual transformation"
+		- for "evidences_of_salvation" give each a quote from the user's testimony, and a label as for why the quote gives evidence e.g. "Spiritual transformation" (keep the label 2-3 words if possible)
 		- for "sources_of_assurance" fill in the percentages so they all add up to 100
 		- for "initial_assurance" the percentage is pre-set by the user, so do not change. The description needs to be 28 words based on their testimony and initial assurance % (so use past tense) (you are talking TO the user)
-		- for "scripture" the "verse" is the quote from the bible, and the referencce is e.g. "John X:YZ". Then a 31 word description/application of those verses (you are talking TO the user)
+		- for "scripture" the "verse" is the quote from the bible e.g. "In the beginning, there...". And the referencce is e.g. "John X:YZ". Then a 31 word description/application of those verses (you are talking TO the user)
 		- for "ai_response" give a response to the user and discussing their assurance/doubt of salvation, their quiz answers, their testimony, and whatever issues they have, with a slightly encouraging tone. You need to reply in HTML form. That means: add <br><br> where its needed, add <b>(text)</b> where bold text is needed, not "**(text)**", etc
 	`;
 
@@ -547,7 +554,6 @@ document.querySelectorAll(".ques-wrapper").forEach(wrapper => {
 });
 function updateAnswers(){
 	questionData[currentSectionIdx][currentQuestionIdx].answer = document.querySelector(".ques-wrapper-active .ques-txt").textContent;
-	console.log(questionData);
 }
 function aiLoading(){
 	let loadingTxt = [
@@ -557,7 +563,6 @@ function aiLoading(){
 		"generating data and analytics...",
 	];
 	let currentContainer = document.querySelectorAll(".ai-loading-container")[document.querySelectorAll(".ai-loading-container").length - 1];
-	console.log(document.querySelectorAll(".ai-loading-container"));
 	currentContainer.querySelectorAll(".ai-dot span").forEach((dot, idx) => {
 		setTimeout(() => {
 			if(currentContainer.querySelector(".ai-loading")){
@@ -565,7 +570,7 @@ function aiLoading(){
 				dot.classList.add("ai-dot-active");
 				currentContainer.querySelector(".ai-loading").textContent = loadingTxt[idx];
 			}
-		}, 5000 * idx);
+		}, 5500 * idx);
 	});
 }
 function orderArray(array, variable){
