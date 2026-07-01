@@ -36,7 +36,7 @@ async function loadQuestions() {
         console.error(error);
     }
 }
-//loadQuestions();
+loadQuestions();
 function sleep(ms){
   return new Promise(resolve => setTimeout(resolve, ms));
 }
