@@ -1,7 +1,7 @@
 
 
 let params = new URLSearchParams(window.location.search);
-let url = "https://artthousaved.onrender.com";
+let url = "https://api.artthousaved.com";
 if(window.location.href.includes("localhost")){
 	url = "";
 }
@@ -26,7 +26,7 @@ if(!localStorage.getItem("msgRate")){
 
 async function loadQuestions() {
     try {
-        const response = await fetch("/artthousaved/quiz.json");
+        const response = await fetch("/quiz.json");
         const data = await response.json();
 
 		questionData = data;

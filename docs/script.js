@@ -1,5 +1,5 @@
 
-let githubRepo = "/artthousaved"
+let githubRepo = "";
 
 document.addEventListener("keydown", (e) => {
     if(e.key == "w"){
