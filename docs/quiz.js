@@ -551,7 +551,7 @@ document.getElementById("chatInputArea").addEventListener("focus", (el) => {
 	if(isMobile || isIPad){
 		setTimeout(function () {
 			el.scrollIntoView({
-				block: "center",
+				block: "bottom",
 				behavior: "smooth"
 			});
 		}, 50);
