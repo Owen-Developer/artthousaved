@@ -1,4 +1,5 @@
 
+let githubRepo = "/artthousaved"
 
 document.addEventListener("keydown", (e) => {
     if(e.key == "w"){
@@ -58,6 +59,6 @@ document.querySelector(".con-form").addEventListener("submit", function(e) {
 });
 
 if(localStorage.getItem("userId")){
-    document.querySelector(".btn-header").setAttribute("href", "/quiz.html?report=true");
+    document.querySelector(".btn-header").setAttribute("href", `${githubRepo}/quiz.html?report=true`);
     document.querySelector(".btn-header").textContent = "View Results";
 }

@@ -1,7 +1,7 @@
 
 
 let params = new URLSearchParams(window.location.search);
-let url = "";
+let url = "https://artthousaved.onrender.com";
 let questionData;
 let cheat = 0;
 let currentSectionIdx = cheat;
