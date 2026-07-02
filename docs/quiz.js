@@ -116,7 +116,7 @@ async function sendStory(){if(!isResponding){
 		document.querySelector(".chat-input-btn").onclick = sendMessage;
 		isResponding = true;
 		isStorySent = true;
-		document.querySelector(".conv-human").textContent = document.getElementById("chatInputArea").value;
+		document.querySelector(".conv-human").textContent = inputValue;
 		document.querySelector(".chat-input-background").style.transition = "0.3s ease";
 		document.querySelector(".chat-input-background").classList.remove("chat-input-start");
 		await switchContainers(document.querySelector(".init-content"), document.querySelector(".conv-container"));
