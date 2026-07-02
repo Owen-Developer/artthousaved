@@ -649,6 +649,7 @@ document.querySelector(".rep-btn-ai").addEventListener("click", () => {
 	switchContainers(document.querySelector(".rep-container"), document.querySelector(".chat-container"));
 });
 document.querySelector(".chat-input-report").addEventListener("click", async () => {
+	highlightPanelCircles();
 	await switchContainers(document.querySelector(".chat-container"), document.querySelector(".rep-container"));
 	window.scrollTo({
 		top: 0,
