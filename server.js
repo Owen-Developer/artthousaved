@@ -207,7 +207,7 @@ app.post("/api/ai-message", async (req, res) => {
         model: "gpt-4.1-mini",
         input: prompt,
     });
-    let aiReply = response.output_text.replace("html", "");
+    let aiReply = response.output_text.replace("html", "").replace("<>", "");
 	return res.json({ reply: aiReply });
 	/*
 	setTimeout(() => {

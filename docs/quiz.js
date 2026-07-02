@@ -539,7 +539,6 @@ document.getElementById("chatInputArea").addEventListener("keydown", (e) => {
 	if(e.key == "Enter" && !e.shiftKey && (!isMobile && !isIPad)){
 		e.preventDefault();
 		if(document.getElementById("chatInputArea").value != ""){
-			document.getElementById("chatInputArea").value = "";
 			if(isStorySent){
 				sendMessage();
 			} else {
