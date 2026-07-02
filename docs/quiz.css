@@ -363,6 +363,7 @@ i.init-box-icon {
     border-radius: 200px;
     background-color: var(--bg-main);
     background-color: hsla(34, 77%, 51%, 0.6);
+    color: transparent !important;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -371,7 +372,6 @@ i.init-box-icon {
 .ai-dot span i {
     opacity: 0;
     transform: scale(0);
-    color: hsl(0, 0%, 40%);
     color: white;
     font-size: 16px;
     transition: 0.3s ease;

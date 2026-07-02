@@ -111,6 +111,8 @@ async function showQuestion(){
 
 async function sendStory(){if(!isResponding){
 	if(currentMsgRate < 50){
+		let inputValue = document.getElementById("chatInputArea").value;
+		document.getElementById("chatInputArea").value = "";
 		document.querySelector(".chat-input-btn").onclick = sendMessage;
 		isResponding = true;
 		isStorySent = true;
@@ -123,7 +125,7 @@ async function sendStory(){if(!isResponding){
 			behavior: "smooth"
 		});
 		aiLoading();
-		let aiObject = await getAiData();
+		let aiObject = await getAiData(inputValue);
 		let aiResponse = `${aiObject.ai_response} Click <span>here</span> to view your report.`;
 		displayReport(aiObject);
 		document.querySelector(".chat-input-report").style.opacity = "1";
@@ -141,9 +143,7 @@ async function sendStory(){if(!isResponding){
 	}
 }}
 
-async function getAiData(){
-	let inputValue = document.getElementById("chatInputArea").value;
-	document.getElementById("chatInputArea").value = "";
+async function getAiData(inputValue){
 	questionData.forEach(section => {
 		section.forEach(question => {
 			delete question.choices;
@@ -539,6 +539,7 @@ document.getElementById("chatInputArea").addEventListener("keydown", (e) => {
 	if(e.key == "Enter" && !e.shiftKey && (!isMobile && !isIPad)){
 		e.preventDefault();
 		if(document.getElementById("chatInputArea").value != ""){
+			document.getElementById("chatInputArea").value = "";
 			if(isStorySent){
 				sendMessage();
 			} else {
