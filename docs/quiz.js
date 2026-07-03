@@ -126,7 +126,7 @@ async function sendStory(){if(!isResponding){
 		});
 		aiLoading();
 		let aiObject = await getAiData(inputValue);
-		let aiResponse = `${aiObject.ai_response} Click <span>here</span> to view your report.`;
+		let aiResponse = `<span class="conv-ai-link">View Results</span> <br><br> ${aiObject.ai_response}`;
 		displayReport(aiObject);
 		document.querySelector(".chat-input-report").style.opacity = "1";
 		document.querySelector(".chat-input-report").style.pointerEvents = "auto";

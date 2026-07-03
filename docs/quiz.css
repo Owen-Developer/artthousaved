@@ -397,6 +397,8 @@ i.init-box-icon {
     transition: 0.2s ease;
 }
 .conv-ai {
+    display: flex;
+    flex-direction: column;
     min-height: 400px;
     width: calc(100% - 150px);
     margin-right: auto;
@@ -409,11 +411,23 @@ i.init-box-icon {
     font-weight: 500;
     color: hsl(0, 0%, 10%);
 }
-.conv-ai span {
+.conv-ai-link {
+    padding: 8px 20px;
+    margin-bottom: 15px;
     cursor: pointer;
-    color: var(--primary);
-    font-weight: 500;
-    text-decoration: underline;
+    border-radius: 200px;
+    font-size: 15px;
+    align-self: flex-start;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    transition: 0.3s ease;
+    background-color: var(--primary);
+    color: white;
+}
+.conv-ai-link:hover {
+    background-color: hsl(34, 77%, 41%);
 }
 
 #chatInputHeight {
