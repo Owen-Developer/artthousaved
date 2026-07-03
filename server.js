@@ -27,6 +27,7 @@ db.query('SELECT 1', (err, results) => {
     else console.log('Database is working');
 });
 
+/*
 const allowedOrigins = [
 	'https://artthousaved.com',
 ];
@@ -42,6 +43,7 @@ app.use(cors({
 	},
 	credentials: true
 }));
+*/
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));

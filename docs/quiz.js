@@ -126,7 +126,7 @@ async function sendStory(){if(!isResponding){
 		});
 		aiLoading();
 		let aiObject = await getAiData(inputValue);
-		let aiResponse = `<span class="conv-ai-link">View Results</span> <br><br> ${aiObject.ai_response}`;
+		let aiResponse = `<span class="conv-ai-link">View Results</span> <br> ${aiObject.ai_response}`;
 		displayReport(aiObject);
 		document.querySelector(".chat-input-report").style.opacity = "1";
 		document.querySelector(".chat-input-report").style.pointerEvents = "auto";
@@ -375,11 +375,17 @@ function displayReport(aiObject){
 	generateRadar(data);
 
 	document.querySelectorAll(".cmp-number")[0].textContent = aiObject.initial_assurance.percentage + "%";
-	document.querySelectorAll(".cmp-number")[1].innerHTML = `<div>${aiObject.initial_assurance.percentage}%</div> <span>how assured are you know?`;
+	document.querySelectorAll(".cmp-number")[1].innerHTML = `<div>${aiObject.initial_assurance.percentage}%</div> <span>how assured are you know?</span>`;
 	document.querySelector(".cmp-audio-bar span").style.width = aiObject.initial_assurance.percentage + "%";
 	document.querySelector(".cmp-audio-bar div").style.left = aiObject.initial_assurance.percentage + "%";
 	document.getElementById("cmpRange").value = aiObject.initial_assurance.percentage;
 	document.querySelector(".cmp-txt").textContent = aiObject.initial_assurance.description;
+	if(localStorage.getItem("postAssurance")){
+		document.querySelectorAll(".cmp-number")[1].innerHTML = `<div>${localStorage.getItem("postAssurance")}%</div> <span>how assured are you know?</span>`;
+		document.querySelector(".cmp-audio-bar span").style.width = localStorage.getItem("postAssurance") + "%";
+		document.querySelector(".cmp-audio-bar div").style.left = localStorage.getItem("postAssurance") + "%";
+		document.getElementById("cmpRange").value = localStorage.getItem("postAssurance");
+	}
 
 	document.querySelector(".bib-quote").textContent = `"${aiObject.scripture.bible_verses[0].verse}"`;
 	document.querySelector(".bib-verse").innerHTML = `${aiObject.scripture.bible_verses[0].reference} <span></span> NIV`;
@@ -550,7 +556,7 @@ document.getElementById("chatInputArea").addEventListener("keydown", (e) => {
 document.getElementById("chatInputArea").addEventListener("focus", (el) => {
 	if(isMobile || isIPad){
 		setTimeout(function () {
-			el.scrollIntoView({
+			document.getElementById("chatInputArea").scrollIntoView({
 				block: "bottom",
 				behavior: "smooth"
 			});
@@ -738,7 +744,16 @@ if(params.get("report")){
 			const data = await response.json();
 			displayReport(data.aiObject);
 			document.querySelector(".conv-human").textContent = data.testimony;
-			document.querySelector(".conv-ai").innerHTML = data.aiObject.ai_response;
+			document.querySelector(".conv-ai").innerHTML = `<span class="conv-ai-link">View Results</span> <br> ${data.aiObject.ai_response}`;
+			document.querySelector(".conv-ai").querySelector("span").addEventListener("click", () => {
+				switchContainers(document.querySelector(".chat-container"), document.querySelector(".rep-container"));
+				setTimeout(() => {
+					window.scrollTo({
+						top: 0,
+						behavior: "smooth"
+					});
+				}, 300);
+			});
 			document.querySelector(".chat-input-report").style.opacity = "1";
 			document.querySelector(".chat-input-report").style.pointerEvents = "auto";
 			document.querySelector(".chat-input-background").classList.remove("chat-input-start");

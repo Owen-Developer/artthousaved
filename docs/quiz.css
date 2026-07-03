@@ -413,7 +413,7 @@ i.init-box-icon {
 }
 .conv-ai-link {
     padding: 8px 20px;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     cursor: pointer;
     border-radius: 200px;
     font-size: 15px;
@@ -519,6 +519,9 @@ i.init-box-icon {
     background-color: hsla(34, 77%, 51%, 1);
     color: white;
     transition: 0.2s ease;
+}
+.chat-input-report:hover, .chat-input-btn:hover {
+    background-color: hsl(34, 77%, 41%);
 }
 /*////////////////////////////////////////////////////*/
 
