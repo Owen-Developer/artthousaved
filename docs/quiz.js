@@ -541,6 +541,14 @@ document.getElementById("chatInputArea").addEventListener("input", () => {
 	console.log(originalHeight, chatInputContainer.getBoundingClientRect().height);
 });
 */
+document.getElementById("chatInputArea").addEventListener("input", () => {
+	let inpValue = document.getElementById("chatInputArea").value;
+	if(inpValue == ""){
+		document.querySelector(".chat-input-btn").classList.add("btn-inactive");
+	} else {
+		document.querySelector(".chat-input-btn").classList.remove("btn-inactive");
+	}
+});
 document.getElementById("chatInputArea").addEventListener("keydown", (e) => {
 	if(e.key == "Enter" && !e.shiftKey && (!isMobile && !isIPad)){
 		e.preventDefault();
