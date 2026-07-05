@@ -397,14 +397,12 @@ i.init-box-icon {
     transition: 0.2s ease;
 }
 .conv-ai {
-    display: flex;
-    flex-direction: column;
+    display: block;
     min-height: 400px;
     width: calc(100% - 150px);
     margin-right: auto;
     font-size: 15px;
     color: hsl(0, 0%, 20%);
-    transition: 0.3s ease;
     transition: 0.2s ease;
 }
 .conv-ai b {
@@ -412,6 +410,7 @@ i.init-box-icon {
     color: hsl(0, 0%, 10%);
 }
 .conv-ai-link {
+    max-width: 134px;
     padding: 8px 20px;
     margin-bottom: 10px;
     cursor: pointer;
